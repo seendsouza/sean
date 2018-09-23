@@ -30,6 +30,12 @@ class App extends Component {
         email,
         tags,
       });
+
+      db.ref('Tags/' + tags).update({
+        "Mentors" :{
+          mentorname
+        }
+      });
     }
     writeMentorData("bob", "sam","bob@bob", "bob");
   }
