@@ -20,7 +20,7 @@ class App extends Component {
         name,
       });
     }
-    writeUserData("bob", "sam","bob@bob", "bob");
+    writeUserData("busername", "bame","bemail", "babstract");
 
     function writeMentorData(mentorname, name, email, tags) {
       //var new_user_ref = app.database().ref('Users/').push();
@@ -31,26 +31,27 @@ class App extends Component {
         tags,
       });
 
-      db.ref('Tags/' + tags).update({
-        "Mentors" :{
-          mentorname
+      var tagname = db.ref(`Tags/${tags}/Mentors`);
+      tagname.update({
+        mentorname :{
+          name,
+          email
         }
       });
+      //  tagname.push(mentorname : {name : name, email : email})
     }
-    writeMentorData("bob", "sam","bob@bob", "bob");
+
+    writeMentorData("bentorname", "bame","bam@bob", "tag1");
+
+    function readMentorsfromTags(tags)
+    {
+      var dbref = db.ref(`Tags/${tags}/Mentors`);
+      console.log(dbref);
+    }
+    readMentorsfromTags("tag1");
+
   }
 
-  /*const db = app.database();
-  function writeUserData(username, name, email, abstract) {
-    //var new_user_ref = app.database().ref('Users/').push();
-    db.ref('Users/' + username).set({
-      username,
-      abstract,
-      email,
-      name,
-    });
-  }
-  writeUserData("bob","bob","bob@bob","bob");*/
   render() {
     return (
       <div className="App">
