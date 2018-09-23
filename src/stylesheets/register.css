@@ -90,6 +90,8 @@ button,input,optgroup,select,textarea{
     margin:0
 }
 button,input{
+  margin-top: 1em;
+  margin-bot: 1em;
 }
 button,select{
     text-transform:none
@@ -146,4 +148,9 @@ summary{
 [hidden],template{
     display:none
 }
+h3 {
+  font-family: Arial,Arial, Helvetica, sans-serif;
+  font-size: 2em;
+}
+
 /*# sourceMappingURL=normalize.min.css.map */
