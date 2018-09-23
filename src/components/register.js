@@ -4,7 +4,7 @@ import '../stylesheets/register.css';
 class Register extends Component {
   render() {
     return (
-      <div className="Template">
+      <div className="Component">
       <form>
               Name:
               <input type="text" name="" placeholder="Name" value="" />
@@ -21,8 +21,11 @@ class Register extends Component {
                 <option value="University Undergrad">Universty Undergrad</option>
                 <option value="Professor/Doctor">Professor/Doctor</option>
               </select>
+
+              <button type="button" name="button">Submit</button>
         </form>
       </div>
+
     );
   }
 }
