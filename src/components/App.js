@@ -17,7 +17,7 @@ class App extends Component {
     var response = function(res) { console.log(res); }
     var logError = function(err) { console.log(err); }
 
-    var professions = [anthropology, architecture, art, astronomy, aviation, baseball, bicycling, biology, books, business, cars, climbing, comedy, cooking, crafts, cricket, design, diy, economic_discussion, education, electronics, energy, environmental, fashion, fiction, film, fishing, fitness, gaming, gardening, gender_issues, general_food, golf, health, history, individualist_politics, investment, jobs, math, medicine, military, music, news, nutrition, parenting, personal, personal_care_and_beauty, personalfinance, pets, philosophy, photography, poetry, programming, psychology, realestate, relationships, romance, running, sailing, school, science, scuba, singing, skateboarding, soccer, sports, startups_and_entrepreneurship, surfing, swimming, technology, television, tennis, travel, ultimate, weather, weight_training, wine, wrestling, writing, yoga]
+    var professions = [anthropology, architecture, art, astronomy, aviation, bicycling, biology, books, business, climbing, cooking, crafts, design, diy, economic_discussion, education, electronics, energy, environmental, film, fishing, fitness, gaming, gardening, gender_issues, general_food, health, history, investment, jobs, math, medicine, military, music, news, nutrition, parenting, personal, personalfinance, philosophy, photography, programming, psychology, realestate, relationships, running, school, science, scuba, singing, sports, startups_and_entrepreneurship, technology, travel, weather, writing, yoga]
 
     function writeMentorData(mentorname, name, email, tags) {
       //var new_user_ref = app.database().ref('Users/').push();
@@ -38,15 +38,7 @@ class App extends Component {
       //  tagname.push(mentorname : {name : name, email : email})
     }
 
-    function readMentorsfromTags(tags)
-    {
-      var dbref = db.ref(`Tags/${tags}/Mentors`);
-      console.log(dbref);
-    }
-    readMentorsfromTags("tag1");
-
     function writeUserData(username, name, email, abstract) {
-
       db.ref('Users/' + username).set({
         username,
         email,
@@ -74,15 +66,7 @@ class App extends Component {
         }
       }
     }
-    /* batch example
-    var batchInput = [
-        "I love writing code!",
-        "Alexander and the Terrible, Horrible, No Good, Very Bad Day"
-    ];
-    indico.sentiment(batchInput)
-      .then(response)
-      .catch(logError);
-      */
+
   }//Ending of ComponentDidMount - VERY VERY IMPORTANT
 
   render() {
