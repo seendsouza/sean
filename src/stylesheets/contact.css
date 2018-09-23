@@ -1,0 +1,43 @@
+.AboutUs {
+  text-align: center;
+}
+
+.AboutUs-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.AboutUs-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.headText {
+  font-size: 16pt;
+  color: #fff;
+
+}
+
+.Large
+{
+    font-size: 14pt;
+    height: 10px !important;
+    rows: 3;
+    width: 200px;
+}
+
+.AboutUs-title {
+  font-size: 1.5em;
+}
+
+.AboutUs-intro {
+  font-size: large;
+}
+
+
+@keyframes Contact-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
