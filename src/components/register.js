@@ -1,64 +1,63 @@
 import React, { Component } from "react";
 import '../stylesheets/register.css';
+import { Button } from 'semantic-ui-react'
 
 class Register extends Component {
   render() {
     return (
-      <div className="Template">
+      <div className="Component">
       <form>
-        <table>
-          <tr>
-            <td>
               Name:
-            </td>
-            <td>
-              <input type="text" name="" placeholder="Name" value="" />
-            </td>
-          </tr>
+              <div class='ui input'>
+                <input type='text' placeholder='Name' />
+              </div>
 
-          <tr>
-            <td>
+
+
+
               Password:
-            </td>
-            <td>
-              <input type="password" name="" placeholder="Password" value="" />
-            </td>
-          </tr>
+              <div class='ui input'>
+                <input type='text' placeholder='Password' />
+              </div>
 
-          <tr>
-            <td>
+
+
+
               Mentor/User:
-            </td>
-            <td>
-              <input type="radio" name="Gender" value="" />Mentor
-              <input type="radio" name="Gender" value="" />User
-            </td>
-          </tr>
+              <div class='ui buttons'>
+                <button class='ui button' role='button'>
+                  Mentor
+                </button>
+                <div class='or' data-text='ou' />
+                <button class='ui positive button' role='button'>
+                  User
+                </button>
+              </div>
 
-          <tr>
-            <td>
+
+
+
+
               Email:
-            </td>
-            <td>
-              <input type="mail" name="" value="" />
-            </td>
-          </tr>
+              <div class='ui input'>
+                <input type='text' placeholder='Email' />
+              </div>
 
-          <tr>
-            <td>
+
+
+
+
               Level of Education :
-            </td>
-            <td>
               <select class="" name="">
                 <option value="Highschool">Highschool</option>
                 <option value="University Undergrad">Universty Undergrad</option>
                 <option value="Professor/Doctor">Professor/Doctor</option>
               </select>
-            </td>
-          </tr>
-        </table>
+
+              <button type="button" name="button">Submit</button>
         </form>
       </div>
+
     );
   }
 }

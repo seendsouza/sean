@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // move logo to public folder
-import logo from '../assets/logo.svg';
 import '../stylesheets/App.css';
 import NavBar from './navbar';
 import Footer from './footer';
