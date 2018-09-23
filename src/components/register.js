@@ -12,7 +12,7 @@ class Register extends Component {
             <p> </p>
           </div>
 
-              Name:
+              <h3>Name:</h3>
               <div class='ui input'>
                 <input type='text' placeholder='Name' />
               </div>
@@ -23,7 +23,7 @@ class Register extends Component {
 
 
 
-              Password:
+              <h3>Password:</h3>
               <div class='ui input'>
                 <input type='text' placeholder='Password' />
               </div>
@@ -33,16 +33,13 @@ class Register extends Component {
               </div>
 
 
-              Mentor/User:
-              <div class='ui buttons'>
-                <button class='ui button' role='' type="button">
-                  Mentor
-                </button>
-                <div class='or' data-text='ou' />
-                <button class='ui positive button' role='' type="button" >
-                  User
-                </button>
-              </div>
+              <h3>Mentor/User:</h3>
+                <div>
+                <select class="" name="">
+                  <option value="Mentor">Mentor</option>
+                  <option value="User">User</option>
+                </select>
+                </div>
 
 
               <div>
@@ -51,7 +48,7 @@ class Register extends Component {
 
 
 
-              Email:
+              <h3>Email:</h3>
               <div class='ui input'>
                 <input type='text' placeholder='Email' />
               </div>
@@ -63,7 +60,7 @@ class Register extends Component {
 
 
 
-              Level of Education:
+              <h3>Level of Education:</h3>
               <div>
               <select class="" name="">
                 <option value="Highschool">Highschool</option>
@@ -76,7 +73,7 @@ class Register extends Component {
               </div>
         </form>
       </div>
-        
+
     );
   }
 }
