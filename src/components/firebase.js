@@ -11,4 +11,4 @@ var config = {
 };
 const app = admin.initializeApp(config);
 
-export default app;
+export default firebase;
