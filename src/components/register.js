@@ -1,80 +1,59 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import '../stylesheets/register.css';
-import { Button } from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 class Register extends Component {
   render() {
-    return (
-      <div className="Component">
-      <form>
+    return (<div className="Component">
+      <form class="ui form">
 
-          <div>
-            <p> </p>
+        <div class="two fields">
+          <div class="field">
+            <label>Name:</label>
+            <div class='ui input'>
+              <input type='text' placeholder='Name'/>
+            </div>
           </div>
 
-              <h3>Name:</h3>
-              <div class='ui input'>
-                <input type='text' placeholder='Name' />
-              </div>
+          <div class="field">
+            <label>Password:</label>
+            <div class='ui input'>
+              <input type='text' placeholder='Name'/>
+            </div>
+          </div>
+        </div>
 
-              <div>
-                <p> </p>
-              </div>
+        <div class="field">
+          <label>Mentor/User:</label>
+          <div class='ui buttons'>
+            <select class="" name="">
+              <option value="Mentor">Mentor</option>
+              <option value="User">User</option>
+            </select>
+          </div>
+        </div>
 
+        <div class="field">
+          <label>Email:</label>
+          <div class='ui input'>
+            <input type='text' placeholder='Email'/>
+          </div>
+        </div>
 
+        <div class="field">
+          <label>Level of Education:</label>
+          <div class='ui input'>
+          <select class="" name="">
+            <option value="Highschool">Highschool</option>
+            <option value="University Undergrad">Universty Undergrad</option>
+            <option value="Professor/Doctor">Professor/Doctor</option>
+          </select>
+        </div>
+        </div>
+        <Button type="submit" class="button">Submit</Button>
 
-              <h3>Password:</h3>
-              <div class='ui input'>
-                <input type='text' placeholder='Password' />
-              </div>
-
-              <div>
-                <p> </p>
-              </div>
-
-
-              <h3>Mentor/User:</h3>
-                <div>
-                <select class="" name="">
-                  <option value="Mentor">Mentor</option>
-                  <option value="User">User</option>
-                </select>
-                </div>
-
-
-              <div>
-                <p> </p>
-              </div>
-
-
-
-              <h3>Email:</h3>
-              <div class='ui input'>
-                <input type='text' placeholder='Email' />
-              </div>
-
-
-              <div>
-                <p> </p>
-              </div>
-
-
-
-              <h3>Level of Education:</h3>
-              <div>
-              <select class="" name="">
-                <option value="Highschool">Highschool</option>
-                <option value="University Undergrad">Universty Undergrad</option>
-                <option value="Professor/Doctor">Professor/Doctor</option>
-              </select>
-              </div>
-              <div>
-              <button type="button" name="button">Submit</button>
-              </div>
-        </form>
-      </div>
-
-    );
+    </form>
+  </div>);
   }
 }
 
