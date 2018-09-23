@@ -17,7 +17,7 @@ class App extends Component {
     var response = function(res) { console.log(res); }
     var logError = function(err) { console.log(err); }
 
-    var professions = [anthropology, architecture, art, astronomy, aviation, bicycling, biology, books, business, climbing, cooking, crafts, design, diy, economic_discussion, education, electronics, energy, environmental, film, fishing, fitness, gaming, gardening, gender_issues, general_food, health, history, investment, jobs, math, medicine, military, music, news, nutrition, parenting, personal, personalfinance, philosophy, photography, programming, psychology, realestate, relationships, running, school, science, scuba, singing, sports, startups_and_entrepreneurship, technology, travel, weather, writing, yoga]
+    var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
 
     function writeMentorData(mentorname, name, email, tags) {
       //var new_user_ref = app.database().ref('Users/').push();
@@ -44,11 +44,11 @@ class App extends Component {
         email,
         name,
       });
-
+/*
       indico.textTags(abstract)
         .then(response)
         .catch(logError);
-
+*/
       for (var key in response)
       {
         if (response[key] >= 0.85)
