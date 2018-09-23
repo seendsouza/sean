@@ -25,11 +25,11 @@ class Register extends Component {
 
               Mentor/User:
               <div class='ui buttons'>
-                <button class='ui button' role='button'>
+                <button class='ui button' role='' type="button">
                   Mentor
                 </button>
                 <div class='or' data-text='ou' />
-                <button class='ui positive button' role='button'>
+                <button class='ui positive button' role='' type="button">
                   User
                 </button>
               </div>
@@ -47,7 +47,7 @@ class Register extends Component {
 
 
 
-              Level of Education :
+              Level of Education:
               <select class="" name="">
                 <option value="Highschool">Highschool</option>
                 <option value="University Undergrad">Universty Undergrad</option>
