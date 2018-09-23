@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import '../stylesheets/home.css';
+import IndianGirls from '../assets/indian-karate-girls.jpg'
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <p>Home</p>
+        <img src={IndianGirls} />
       </div>
     );
   }
