@@ -21,6 +21,17 @@ class App extends Component {
       });
     }
     writeUserData("bob", "sam","bob@bob", "bob");
+
+    function writeMentorData(mentorname, name, email, tags) {
+      //var new_user_ref = app.database().ref('Users/').push();
+      db.ref('Mentors/' + mentorname).set({
+        mentorname,
+        name,
+        email,
+        tags,
+      });
+    }
+    writeMentorData("bob", "sam","bob@bob", "bob");
   }
 
   /*const db = app.database();
