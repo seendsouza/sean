@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 /***
 * Import all page components here
 */
-import App from './components/App'
 import AboutUs from './components/aboutus'
 import Home from './components/home'
 import Register from './components/register'

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg';
 import '../stylesheets/navbar.css';
 
 class NavBar extends Component {
