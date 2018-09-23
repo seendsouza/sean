@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import '../stylesheets/register.css';
-import NavBar from './navbar';
-import Footer from './footer';
 
-class Template extends Component {
+class Register extends Component {
   render() {
     return (
       <div className="Template">
-      <NavBar/>
       <form>
         <table>
           <tr>
@@ -15,7 +12,7 @@ class Template extends Component {
               Name:
             </td>
             <td>
-              <input type="text" name="" placeholder="Name" value="">
+              <input type="text" name="" placeholder="Name" value="" />
             </td>
           </tr>
 
@@ -24,7 +21,7 @@ class Template extends Component {
               Password:
             </td>
             <td>
-              <input type="password" name="" placeholder="Password" value="">
+              <input type="password" name="" placeholder="Password" value="" />
             </td>
           </tr>
 
@@ -33,8 +30,8 @@ class Template extends Component {
               Mentor/User:
             </td>
             <td>
-              <input type="radio" name="Gender" value="">Mentor
-              <input type="radio" name="Gender" value="">User
+              <input type="radio" name="Gender" value="" />Mentor
+              <input type="radio" name="Gender" value="" />User
             </td>
           </tr>
 
@@ -43,7 +40,7 @@ class Template extends Component {
               Email:
             </td>
             <td>
-              <input type="mail" name="" value="">
+              <input type="mail" name="" value="" />
             </td>
           </tr>
 
@@ -61,7 +58,6 @@ class Template extends Component {
           </tr>
         </table>
         </form>
-        <Footer/>
       </div>
     );
   }

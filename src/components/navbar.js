@@ -11,8 +11,8 @@ class NavBar extends Component {
       <h1 class="logo"></h1>
       <nav>
         <ul>
-          <li><Link to="/">Home </Link></li>
-          <li><Link to="/aboutus">About Us</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about-us">About Us</Link></li>
           <li><Link to="/register">Register</Link></li>
           <li><Link to="/requests">Requests</Link></li>
           <li><Link to="/contact">Contact</Link></li>
@@ -20,7 +20,6 @@ class NavBar extends Component {
       </nav>
     </div>
   </header>
-
     );
   }
 }
