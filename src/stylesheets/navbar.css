@@ -7,12 +7,13 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
+
 header {
-  background: #55d6aa;
+  background: rgb(246, 54, 144);
 }
 
 .icon {
@@ -27,8 +28,10 @@ header::after {
 }
 
 .logo {
-  float: right;
-  padding: 10px;
+  float: left;
+  height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 nav {
   float: right;
@@ -43,7 +46,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 70px;
+  margin-right: 70px;
   padding-top: 23px;
   position: relative;
 }
