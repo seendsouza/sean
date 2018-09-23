@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../stylesheets/register.css';
+import { Button } from 'semantic-ui-react'
 
 class Register extends Component {
   render() {
@@ -7,14 +8,45 @@ class Register extends Component {
       <div className="Component">
       <form>
               Name:
-              <input type="text" name="" placeholder="Name" value="" />
+              <div class='ui input'>
+                <input type='text' placeholder='Name' />
+              </div>
+
+
+
+
               Password:
-              <input type="password" name="" placeholder="Password" value="" />
+              <div class='ui input'>
+                <input type='text' placeholder='Password' />
+              </div>
+
+
+
+
               Mentor/User:
-              <input type="radio" name="Gender" value="" />Mentor
-              <input type="radio" name="Gender" value="" />User
+              <div class='ui buttons'>
+                <button class='ui button' role='button'>
+                  Mentor
+                </button>
+                <div class='or' data-text='ou' />
+                <button class='ui positive button' role='button'>
+                  User
+                </button>
+              </div>
+
+
+
+
+
               Email:
-              <input type="mail" name="" value="" />
+              <div class='ui input'>
+                <input type='text' placeholder='Email' />
+              </div>
+
+
+
+
+
               Level of Education :
               <select class="" name="">
                 <option value="Highschool">Highschool</option>
