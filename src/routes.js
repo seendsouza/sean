@@ -8,6 +8,8 @@ import AboutUs from './components/aboutus'
 import Home from './components/home'
 import Register from './components/register'
 import Contact from './components/contact'
+import LoginForm from './components/loginform'
+import Requests from './components/requests'
 
 class Routes extends Component {
   render() {
@@ -17,6 +19,8 @@ class Routes extends Component {
         <Route path="/about-us" component={AboutUs} />\
         <Route path="/register" component={Register} />\
         <Route path="/contact" component={Contact} />\
+          <Route path="/requests" component={Requests} />\
+          <Route path="/login" component={LoginForm} />\
       </Switch>
     );
   }

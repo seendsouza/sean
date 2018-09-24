@@ -1,28 +1,39 @@
-.AboutUs {
-  text-align: center;
-}
-
-.AboutUs-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .AboutUs-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: #222;
+  display: inline-block;
+}
+.AboutUs-header h2 {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 4em;
+    text-align: center;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 100;
+	letter-spacing: 0.0625em;
+
+}
+.AboutUs-header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 4em;
+    text-align: center;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 100;
+	letter-spacing: 0.0625em;
 }
 
-.AboutUs-title {
-  font-size: 1.5em;
+p {
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-.AboutUs-intro {
-  font-size: large;
-}
-
-@keyframes AboutUs-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Large
+{
+    font-size: 14pt;
+    height: 10px !important;
+    rows: 3;
+    width: 200px;
 }
