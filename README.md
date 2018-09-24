@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+Our web app pairs professionals in the developed world to communities in the developing world via NGOs and charities, to help solve problems that exist within developing communities. Pairing is done by matching specific skills and qualifications of the professionals, to the specific problems that exist within the communities, so solutions can be found. After pairing, professionals can directly contact NGOs and communities, and they can discuss specific needs more in-depth.
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
