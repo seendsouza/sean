@@ -1,6 +1,6 @@
 # SEAN (Sophisticated Empowerment Assistant Network)
 ## A York U Hacks project
-###Our Purpose
+### Our Purpose
 Developing countries across the world lack the resources ability to meet the needs of their citizens, and their communities. As a result, citizens are unable to access basic necessities that many take for granted: such food, water, education, or healthcare.
 
 The Sophisticated Educational Assistant Network (SEAN) was created with the mission to create global solidarity in making the world a better place. We do this through our service: by pairing citizens of developed countries to citizens of developing countries.
