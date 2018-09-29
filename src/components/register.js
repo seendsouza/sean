@@ -29,11 +29,6 @@ class Register extends Component {
   }
 
   handleSubmit(event) {
-    /*
-    console.log('Info submitted\nName: ' + this.state.Name + '\nPass: ' + this.state.Pass + '\nUser Type: '
-    + this.state.usertype + '\nEmail: ' + this.state.email + '\nLvlofEdu: ' + this.state.LvlofEdu);
-     */
-
     var db = app.database();
     db.ref(this.state.usertype + '/' + this.state.Name).set({
       Pass: this.state.Pass,
