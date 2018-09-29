@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import '../stylesheets/App.css';
+import './App.css';
 import NavBar from './navbar';
 import Footer from './footer';
-import app from './firebase';
+import './firebase';
 
 class App extends Component {
   render() {
