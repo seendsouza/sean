@@ -1,34 +1,4 @@
 .Home {
-  top: 0;
   text-align: center;
 }
-.section1 h1 {
-  color: #22264b;
-  padding-top: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-font-size: 4em;
-}
 
-.section1 h2 {
-  color: #b56969;
-  padding-bottom: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-font-size: 3em;
-}
-
-.section2 {
-  background-color: #b56969;
-}
-.section2 h1 {
-  color: #e6cf8b;
-  padding-top: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-font-size: 4em;
-}
-
-.section2 h2 {
-  color: #e8edf3;
-  padding-bottom: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-font-size: 3em;
-}

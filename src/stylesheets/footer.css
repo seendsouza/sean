@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,600");
 body {
   margin: 0;
-  background: #e8edf3;
+  background: #444;
   font-family: 'Work Sans', sans-serif;
   font-weight: 800;
 }
 
 .footer {
-     position: relative;
+     position: fixed;
      left: 0;
      bottom: 0;
      width: 100%;
-     background-color: #22264b;
-     color: #e0e1e2;
+     background-color: #55d6aa;
+     color: #444;
      text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
  }
