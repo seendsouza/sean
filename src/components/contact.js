@@ -5,10 +5,9 @@ class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        <div className="ContactUs-header">
-            <h2>Contact Us</h2>
-        </div>
         <form>
+          <div><p></p></div>
+
           <div class="headText">Name:</div>
           <div class='ui input'>
             <input type='text' placeholder='Name' />
@@ -38,12 +37,6 @@ class Contact extends Component {
             <textarea placeholder='Max words: 500' rows='3' size='50' maxlength='500' rows='10' cols='50'/>
             </div>
           </div>
-          <div> <p></p></div>
-        <div class='ui buttons'>
-          <button class='ui button' role='' type="button">
-            Submit
-          </button>
-        </div>
         </form>
       </div>
     );
