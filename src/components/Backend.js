@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 // move logo to public folder
-import '../stylesheets/App.css';
-import NavBar from './navbar';
-import Footer from './footer';
 import Routes from '../routes';
 import app from "./firebase";
 
@@ -12,7 +9,7 @@ class App extends Component {
   componentDidMount() {
     var db = app.database();
 
-    indico.apiKey =  '72e96d569596102c2948c3ace6ad16fe';
+    indico.apiKey = '72e96d569596102c2948c3ace6ad16fe';
 
     var response = function(res) { console.log(res); }
     var logError = function(err) { console.log(err); }
@@ -71,10 +68,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      <NavBar/>
-        <Routes />
-        <Footer/>
+      <div className="Backend">
       </div>
     );
   }

@@ -7,6 +7,24 @@ import {
 } from 'semantic-ui-react'
 
 class Requests extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Abstract : ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+}
+  handleChange(event)
+  {
+
+  }
+
+  handleSubmit(event)
+  {
+    
+  }
   render() {
     return ( <
       div className = "Component" >
