@@ -35,9 +35,6 @@ class Requests extends Component {
     db.ref(this.state.usertype + '/' + this.state.Name).update({
       Abstract : this.state.Abstract
     })
-    db.ref().update({
-      Abstract : this.state.Abstract
-    })
   }
   render() {
     return (

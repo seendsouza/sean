@@ -7,11 +7,11 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Name : '',
-      Pass : '',
-      usertype : 'Mentor',
-      email : '',
-      LvlofEdu : 'Highschool'
+      Name : "",
+      Pass : "",
+      usertype : "Mentor",
+      email : "",
+      LvlofEdu : "Highschool"
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -20,22 +20,27 @@ class Register extends Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = event.target.value;
-    const name = event.target.name;
-
+    const value = target.value;
+    const name = target.name;
+    console.log(this.state)
     this.setState({
       [name] : value
     })
   }
 
   handleSubmit(event) {
+    console.log(this.state.Name + "<-- Name\n" + this.state.Pass + "<-- Pass\n" + this.state.usertype + "<-- UserType\n" + this.state.email + "<-- Email\n" + this.state.LvlofEdu + "<-- Level of Education")
+    console.log("Name: " + this.state.Name + "\nPass: " + this.state.Pass + "\nUserType: " + this.state.usertype + "\nEmail: " + this.state.email + "\nLevel of Education: " + this.state.LvlofEdu)
     var db = app.database();
+    db.ref("Something/").set({
+      "bob":"sam"
+    })
     db.ref(this.state.usertype + '/' + this.state.Name).set({
       Pass: this.state.Pass,
       Email : this.state.email,
       LvlofEdu : this.state.LvlofEdu
     })
-
+    alert('hold on a second');
   }
 
   render() {
@@ -47,11 +52,11 @@ class Register extends Component {
             <label>Name:</label>
             <div class='ui input'>
               <input
-              name = 'Name'
-              type = 'text'
-              value = {this.state.Name}
-              onChange = {this.handleInputChange}
-              placeholder = "Name"/>
+                name = "Name"
+                type = "text"
+                value = {this.state.Name}
+                onChange = {this.handleInputChange}
+                placeholder = "Name"/>
             </div>
           </div>
 
