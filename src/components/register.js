@@ -6,14 +6,14 @@ import app from './firebase'
 class Register extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       Name : "",
       Pass : "",
       usertype : "Mentor",
       email : "",
-      LvlofEdu : "Highschool"
+      LvlofEdu : "Highschool",
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,25 +22,19 @@ class Register extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(this.state)
     this.setState({
       [name] : value
     })
   }
 
   handleSubmit(event) {
-    console.log(this.state.Name + "<-- Name\n" + this.state.Pass + "<-- Pass\n" + this.state.usertype + "<-- UserType\n" + this.state.email + "<-- Email\n" + this.state.LvlofEdu + "<-- Level of Education")
-    console.log("Name: " + this.state.Name + "\nPass: " + this.state.Pass + "\nUserType: " + this.state.usertype + "\nEmail: " + this.state.email + "\nLevel of Education: " + this.state.LvlofEdu)
+    event.preventDefault();
     var db = app.database();
-    db.ref("Something/").set({
-      "bob":"sam"
-    })
-    db.ref(this.state.usertype + '/' + this.state.Name).set({
-      Pass: this.state.Pass,
-      Email : this.state.email,
-      LvlofEdu : this.state.LvlofEdu
-    })
-    alert('hold on a second');
+      db.ref(this.state.usertype + '/' + this.state.name).set({
+        Pass: this.state.Pass,
+        Email : this.state.email,
+        LvlofEdu : this.state.LvlofEdu
+      });
   }
 
   render() {
