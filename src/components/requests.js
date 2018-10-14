@@ -3,6 +3,8 @@ import '../stylesheets/requests.css'
 import {Button} from 'semantic-ui-react'
 import app from 'firebase'
 
+//import indico from 'indico.io';
+
 class Requests extends Component {
   constructor(props)
   {
@@ -30,8 +32,28 @@ class Requests extends Component {
 
   handleSubmit(event)
   {
-    console.log('Name: ' + this.state.Name + '\nUser Type: ' + this.state.usertype + '\nAbstract: ' + this.state.Abstract);
-    var db = app.database();
+    event.preventDefault();
+    var db = app.database()
+    var indico = require('indico.io');
+    indico.apiKey = '72e96d569596102c2948c3ace6ad16fe';
+
+    var response = function(res) { console.log(res); }
+    var logError = function(err) { console.log(err); }
+
+    var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
+
+    indico.sentiment("I love writing code!")
+    .then(response)
+    .catch(logError);
+
+    /*
+    for(var key in response)
+    {
+        db.ref('Tags/' + key + '/' + 'Users/').set({
+          Name : this.state.Name
+        });
+    }
+*/
     db.ref(this.state.usertype + '/' + this.state.Name).update({
       Abstract : this.state.Abstract
     })
