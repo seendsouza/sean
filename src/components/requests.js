@@ -2,8 +2,7 @@ import React, {Component} from "react"
 import '../stylesheets/requests.css'
 import {Button} from 'semantic-ui-react'
 import app from 'firebase'
-
-//import indico from 'indico.io';
+import indico from 'indico.io';
 
 class Requests extends Component {
   constructor(props)
@@ -11,7 +10,7 @@ class Requests extends Component {
     super(props);
     this.state = {
       Name : '',
-      usertype : 'Mentor',
+      usertype : 'User',
       Abstract : ''
     };
 
@@ -34,26 +33,29 @@ class Requests extends Component {
   {
     event.preventDefault();
     var db = app.database()
-    var indico = require('indico.io');
-    indico.apiKey = '72e96d569596102c2948c3ace6ad16fe';
 
     var response = function(res) { console.log(res); }
     var logError = function(err) { console.log(err); }
 
     var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
 
-    indico.sentiment("I love writing code!")
-    .then(response)
-    .catch(logError);
+    indico.ApiKey = '72e96d569596102c2948c3ace6ad16fe';
 
-    /*
-    for(var key in response)
-    {
-        db.ref('Tags/' + key + '/' + 'Users/').set({
-          Name : this.state.Name
-        });
-    }
-*/
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+    targetUrl = 'https://apiv2.indico.io/texttags'
+fetch(proxyUrl + targetUrl, {
+  method: 'POST',
+  headers : {
+    'X-ApiKey' : indico.ApiKey
+  },
+  body : JSON.stringify({
+    'api_key' : indico.ApiKey,
+    'Abstract' : this.state.Abstract,
+    'threshold' : 0.85,
+    'independent' : true
+  }),
+}).then(response)
+
     db.ref(this.state.usertype + '/' + this.state.Name).update({
       Abstract : this.state.Abstract
     })
