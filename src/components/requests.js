@@ -2,16 +2,16 @@ import React, {Component} from "react"
 import '../stylesheets/requests.css'
 import {Button} from 'semantic-ui-react'
 import app from 'firebase'
-import indico from 'indico.io';
+import axios from 'axios';
 
 class Requests extends Component {
   constructor(props)
   {
     super(props);
     this.state = {
-      Name : '',
-      usertype : 'User',
-      Abstract : ''
+      Name : 'samuel',
+      usertype : 'Mentor',
+      Abstract : 'I love anthropology!',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -34,27 +34,35 @@ class Requests extends Component {
     event.preventDefault();
     var db = app.database()
 
-    var response = function(res) { console.log(res); }
-    var logError = function(err) { console.log(err); }
-
     var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
 
-    indico.ApiKey = '72e96d569596102c2948c3ace6ad16fe';
+    var logError = function(res) {console.log(res)}
+    axios.post(`https://apiv2.indico.io/texttags`,
+      JSON.stringify({
+        'api_key' : "72e96d569596102c2948c3ace6ad16fe",
+        'data': this.state.Abstract,
+        'threshold' : 0.1,
+        'independent' : true
+      })
+    )
+    .then(res => {
+      for(let i of Object.keys(res.data.results))
+      {
+        if (professions.includes(i))
+        {
+          console.log(this.state.Name);
+          console.log(this.state.usertype);
+          db.ref(this.state.usertype + '/' + this.state.Name).update({
+            Tags: Object.keys(res.data.results)
+          })
 
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-    targetUrl = 'https://apiv2.indico.io/texttags'
-fetch(proxyUrl + targetUrl, {
-  method: 'POST',
-  headers : {
-    'X-ApiKey' : indico.ApiKey
-  },
-  body : JSON.stringify({
-    'api_key' : indico.ApiKey,
-    'Abstract' : this.state.Abstract,
-    'threshold' : 0.85,
-    'independent' : true
-  }),
-}).then(response)
+          db.ref('Tags/' + i + '/').update({
+            Users : this.state.Name
+          })
+        }
+      }
+    })
+    .catch(logError)
 
     db.ref(this.state.usertype + '/' + this.state.Name).update({
       Abstract : this.state.Abstract
