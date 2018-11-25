@@ -9,9 +9,9 @@ class Requests extends Component {
   {
     super(props);
     this.state = {
-      Name : 'samuel',
+      Name : '',
       usertype : 'Mentor',
-      Abstract : 'I love anthropology!',
+      Abstract : '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,38 +35,40 @@ class Requests extends Component {
     var db = app.database()
 
     var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
-
-    var logError = function(res) {console.log(res)}
-    axios.post(`https://apiv2.indico.io/texttags`,
-      JSON.stringify({
-        'api_key' : "72e96d569596102c2948c3ace6ad16fe",
-        'data': this.state.Abstract,
-        'threshold' : 0.1,
-        'independent' : true
-      })
-    )
-    .then(res => {
-      for(let i of Object.keys(res.data.results))
-      {
-        if (professions.includes(i))
+    if(this.state.Name != '' && this.state.Abstract != '')
+    {
+      var logError = function(res) {console.log(res)}
+      axios.post(`https://apiv2.indico.io/texttags`,
+        JSON.stringify({
+          'api_key' : "72e96d569596102c2948c3ace6ad16fe",
+          'data': this.state.Abstract,
+          'threshold' : 0.1,
+          'independent' : true
+        })
+      )
+      .then(res => {
+        for(let i of Object.keys(res.data.results))
         {
-          console.log(this.state.Name);
-          console.log(this.state.usertype);
-          db.ref(this.state.usertype + '/' + this.state.Name).update({
-            Tags: Object.keys(res.data.results)
-          })
+          if (professions.includes(i))
+          {
+            console.log(this.state.Name);
+            console.log(this.state.usertype);
+            db.ref(this.state.usertype + '/' + this.state.Name).update({
+              Tags: Object.keys(res.data.results)
+            })
 
-          db.ref('Tags/' + i + '/').update({
-            Users : this.state.Name
-          })
+            db.ref('Tags/' + i + '/').update({
+              Users : this.state.Name
+            })
+          }
         }
-      }
-    })
-    .catch(logError)
+      })
+      .catch(logError)
 
-    db.ref(this.state.usertype + '/' + this.state.Name).update({
-      Abstract : this.state.Abstract
-    })
+      db.ref(this.state.usertype + '/' + this.state.Name).update({
+        Abstract : this.state.Abstract
+      })
+    }
   }
   render() {
     return (
