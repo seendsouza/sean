@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button} from 'semantic-ui-react' //import {Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import logo from '../assets/logo.svg'
 
 class LoginForm extends Component {

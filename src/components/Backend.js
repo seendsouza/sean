@@ -63,7 +63,6 @@ class App extends Component {
         }
       }
     }
-
   }//Ending of ComponentDidMount - VERY VERY IMPORTANT
 
   render() {
