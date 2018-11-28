@@ -5,6 +5,7 @@ import app from 'firebase'
 import axios from 'axios';
 
 class Requests extends Component {
+<<<<<<< HEAD
   constructor(props)
   {
     super(props);
@@ -27,10 +28,25 @@ class Requests extends Component {
     this.setState({
       [name] : value
     })
+=======
+  constructor(props) {
+    super(props);
+    this.state = {
+      Abstract : ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+}
+  handleChange(event)
+  {
+
+>>>>>>> master
   }
 
   handleSubmit(event)
   {
+<<<<<<< HEAD
     event.preventDefault();
     const db = app.database()
 
@@ -68,6 +84,9 @@ class Requests extends Component {
         Abstract : this.state.Abstract
       })
     }
+=======
+    
+>>>>>>> master
   }
   render() {
     return (
