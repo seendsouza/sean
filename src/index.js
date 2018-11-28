@@ -4,10 +4,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import './stylesheets/index.css';
-<<<<<<< HEAD
-=======
 import App from './App';
->>>>>>> master
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((

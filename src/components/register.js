@@ -28,10 +28,7 @@ class Register extends Component {
   }
 
   handleSubmit(event) {
-<<<<<<< HEAD
     event.preventDefault();
-=======
->>>>>>> master
     var db = app.database();
       db.ref(this.state.usertype + '/' + this.state.name).set({
         Pass: this.state.Pass,
