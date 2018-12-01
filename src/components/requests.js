@@ -37,13 +37,12 @@ class Requests extends Component {
 
     if(this.state.Name !== '' && this.state.Abstract !== '')
     {
-
       var logError = function(res) {console.log(res)}
       axios.post(`https://apiv2.indico.io/texttags`,
         JSON.stringify({
           'api_key' : "72e96d569596102c2948c3ace6ad16fe",
           'data': this.state.Abstract,
-          'threshold' : 0.1,
+          'threshold' : 0.2,
           'independent' : true
         })
       )
