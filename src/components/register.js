@@ -35,6 +35,14 @@ class Register extends Component {
         Email : this.state.email,
         LvlofEdu : this.state.LvlofEdu
       });
+
+    const auth = app.auth();
+
+    auth.createUserWithEmailAndPassword(this.state.email, this.state.Pass)
+    .catch(err => {
+      console.log(err.code);
+      console.log(err.message);
+    })
   }
 
   render() {
