@@ -1,7 +1,30 @@
 import React, { Component } from "react";
 import '../stylesheets/home.css';
+import app from 'firebase'
 
 class Home extends Component {
+  constructor(props)
+  {
+    super(props);
+    const auth = app.auth();
+
+    auth.onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      console.log(uid);
+    } else {
+      console.log("Nobody's logged in right now.");
+    }
+  });
+  }
+
   render() {
     return (
       <div className="Home">
