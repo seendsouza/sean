@@ -8,7 +8,7 @@ class NavBar extends Component {
     return (
       <header>
     <div class="container">
-      <img class="logo" src={logo}></img>
+      <img class="logo" src={logo} alt = "Logo here"></img>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
