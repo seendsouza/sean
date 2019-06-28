@@ -3,6 +3,7 @@ import '../stylesheets/requests.css'
 import {Button} from 'semantic-ui-react'
 import app from 'firebase'
 import axios from 'axios';
+import * as profs from '../assets/professions.json';
 
 class Requests extends Component {
   constructor(props)
@@ -34,8 +35,6 @@ class Requests extends Component {
     event.preventDefault();
     const db = app.database()
 
-    var professions = ["anthropology", "architecture", "art", "astronomy", "aviation", "bicycling", "biology", "books", "business", "climbing", "cooking", "crafts", "design", "diy", "economic_discussion", "education", "electronics", "energy", "environmental", "film", "fishing", "fitness", "gaming", "gardening", "gender_issues", "general_food", "health", "history", "investment", "jobs", "math", "medicine", "military", "music", "news", "nutrition", "parenting", "personal", "personalfinance", "philosophy", "photography", "programming", "psychology", "realestate", "relationships", "running", "school", "science", "scuba", "singing", "sports", "startups_and_entrepreneurship", "technology", "travel", "weather", "writing", "yoga"]
-
     if(this.state.Name !== '' && this.state.Abstract !== '')
     {
       var logError = function(res) {console.log(res)}
@@ -43,17 +42,17 @@ class Requests extends Component {
         JSON.stringify({
           'api_key' : "72e96d569596102c2948c3ace6ad16fe",
           'data': this.state.Abstract,
-          'threshold' : 0.1,
+          'threshold' : 0.2,
           'independent' : true
         })
       )
       .then(res => {
         for(let i of Object.keys(res.data.results))
         {
-          if (professions.includes(i))
+          if (profs.professions.includes(i))
           {
             db.ref(this.state.usertype + '/' + this.state.Name).update({
-              Tags: Object.keys(res.data.results)
+                Tags: Object.keys(res.data.results)
             })
 
             db.ref('Tags/' + i + '/').update({

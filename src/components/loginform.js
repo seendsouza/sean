@@ -3,6 +3,7 @@ import { Button} from 'semantic-ui-react' //import {Form, Grid, Header, Image, M
 import logo from '../assets/logo.svg'
 
 class LoginForm extends Component {
+
   render() {
 return(
   <div className='login-form'>
