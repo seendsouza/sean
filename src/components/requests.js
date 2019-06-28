@@ -1,6 +1,6 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import '../stylesheets/requests.css'
-import {Button} from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import app from 'firebase'
 import axios from 'axios';
 import * as profs from '../assets/professions.json';
@@ -33,7 +33,7 @@ class Requests extends Component {
   handleSubmit(event)
   {
     event.preventDefault();
-    const db = app.database()
+    const db = app.database();
 
     if(this.state.Name !== '' && this.state.Abstract !== '')
     {
